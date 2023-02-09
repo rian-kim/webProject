@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+		#box1{
+/* 			너비 높이*/
+			width:200px; height: 100px;
+/* 			테두리 */
+			border: 1px solid black;
+/* 			테두리선 두께 */
+/* 			위 아래 왼쪽 오른쪽 모두 */
+			border-width: 5px;
+/* 			위아래   ,   왼오른쪽 */
+			border-width: 5px 10px;
+/* 			위, 오른쪽, 아래, 왼쪽 */
+			border-width: 5px 10px 20px 30px;
+			border-top-width: 1px;
+			border-right-width: 1px;
+			border-bottom-width: 10px;
+			border-left-width: 20px;
+		}
+		#box2{
+/* 			너비 높이*/
+			width:200px; height: 100px;
+/* 			테두리 */
+			border: 5px solid black;
+/* 			테두리선 종류 실선 solid, 점선 dotted*/
+/* 전체 */
+			border-style: dotted;
+/* 			위아래   왼오른쪽 */
+			border-style: solid dotted;
+/* 			위  오른쪽  아래  왼쪽 */
+			border-style: solid dotted dashed double;
+			
+			border-top-style: solid;
+			border-right-style: dotted;
+			border-bottom-style: dashed;
+			border-left-style: double;
+		}
+		
+		#box3{
+/* 			너비 높이*/
+			width:200px; height: 100px;
+/* 			테두리 */
+			border: 5px solid black;
+/* 			테두리선 색*/
+/* 전체 */
+			border-color: blue;
+			/* 			위아래   왼오른쪽 */
+			border-color: blue red;
+/* 			위  오른쪽  아래  왼쪽 */
+			border-color: blue red green purple;
+			
+			border-top-color: blue;
+			border-right-color: red;
+			border-bottom-color: green;
+			border-left-color: purple;
+		}
+		
+		#box4{
+/* 			너비 높이*/
+			width:200px; height: 100px;
+/* 			테두리 */
+			border: 5px solid black;
+/* 			테두리선 둥글게*/
+/* 			border-radius: 25px; */
+/* 			border-radius: 50%; */
+
+			border-bottom-left-radius: 25px;
+			border-bottom-right-radius: 25px;
+			border-top-left-radius: 15px;
+			border-top-right-radius: 25px;
+		}
+		
+		#img1{
+/* 		모서리 둥글게 */
+		border-radius: 30px;
+/* 		영역의 그림자 */
+/* 		box-shadow: 수평 수직 흐림정도 번짐정도 색상 */
+		box-shadow: -2px 2px 5px 0px blue;
+		}
+
+</style>
+</head>
+<body>
+<div id="box1">테두리선</div>
+<br>
+<div id="box2">테두리선</div>
+<br>
+<div id="box3">테두리선의 색</div>
+<br>
+<div id="box4">테두리선의 모양</div>
+<br>
+<img src="../html1/1.jpg" id="img1">
+</body>
+</html>

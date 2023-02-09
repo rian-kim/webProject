@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_test/test4.html</title>
+<style type="text/css">
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background-color: #ccc;
+	padding:20px;
+}
+#signup{
+	background-color: white;
+	border: 1px solid #222;
+	border-radius: 5px;
+	padding: 20px;
+	width: 400px;
+}
+#signup fieldset{
+	border: 1px solid #ccc;
+	margin: 0 0 30px;
+}
+#signup fieldset:last-of-type{
+	border: none;
+}
+#signup legend{
+	font-size: 16px;
+	font-weight: bold;
+	padding: 0 0 10px 5px;
+}
+#signup ul li{
+	line-height: 30px;
+	list-style-type: none;
+	padding: 5px 10px;
+	margin: 0 0 2px;
+}
+#signup label{
+	width: 110px;
+	font-size: 15px;
+	float: left;
+}
+#signup input:not([type=submit], [type=radio]){
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-size: 15px;
+	padding: 5px;
+	width: 220px;
+}
+#signup input[type=submit]{
+	border: 1px solid #222;
+	border-radius: 20px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: 7px 25px;
+	display: block;
+}
+#signup input[type=submit]:hover{
+	background-color: #222;
+	color: white;
+}
+
+</style>
+</head>
+<body>
+<form id="signup" action="test15.html" method="get">
+	<fieldset>
+	 <h1>ITWILL 회원가입</h1>
+    <fieldset>
+      <legend>필수입력</legend>
+      <ul>
+      	<li>
+          <label for="usenam">♣ 이름</label>
+          <input id="usenam" name="usenam" type="text" required autofocus>
+        </li>
+        <li>
+          <label for="userid">♣ 아이디</label>
+          <input id="userid" name="userid" type="text" placeholder="6~10자 영문과 숫자 조합" required>
+        </li>
+        <li>
+          <label for="pwd1">♣ 비밀번호</label>
+          <input id="pwd1" name="pwd1" type="password"  placeholder="8~12자 영문,숫자,특수문자" required>
+        </li>
+        <li>
+        	<label for="gender">♣ 성별 : </label>
+			<input id= "gender" type="radio"  name="gender"  value="남" required>남
+			<input id= "gender" type="radio"  name="gender"  value="여" checked required>여
+			<input id= "gender" type="radio"  name="gender"  value="기타" required>기타
+		</li>
+        <li>
+          <label for="date">♣ 생년월일</label>
+		  <input id="date"  type="date"  name="date"  required>
+        </li>
+        <li>
+          <label for="tel">♣ 전화번호</label>
+          <input id="tel" name="tel" type="tel" placeholder="(예시)010-777-8888" autocomplete="off">
+        </li>
+        <li>
+          <label for="email">♣ email</label>
+          <input id="email" name="email" type="email" required autocomplete="off">
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>선택 입력</legend>
+      <ul>
+        <li>
+          <label for="blogadd">♣ 블로그 주소</label>
+          <input id="blogadd" name="blogadde" type="text" required>
+        </li>
+        <li>
+        <label for="major">♣ 학과 선택</label>
+		<select id="major">
+				<option value="1" selected>산업공학과</option>
+				<option value="2">경영학과</option>
+				<option value="3">외식학과</option>
+		</select>
+		</li>
+        <li>
+        <label for="har">♣ 취미 선택</label>
+		<select id="har">
+				<option value="1" selected>요리</option>
+				<option value="2">등산</option>
+				<option value="3">여행</option>
+		</select>
+        </li>  
+      </ul>
+    </fieldset>
+    <fieldset>
+    	<input type="submit" value="가입"> 
+    </fieldset>
+    </fieldset>
+  </form>
+</body>
+</html>

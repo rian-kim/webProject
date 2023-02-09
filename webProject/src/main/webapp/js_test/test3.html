@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(){
+	alert("중복확인완료")
+}
+function fun2(){
+	window.open("test2.html", "pop", "width=500, height=400, left=200, top=100")
+}
+function fun3() {
+	if(document.fr.name.value==""){
+		alert("이름을 입력해 주세요");
+		document.fr.name.focus();
+		return;
+	}
+	if(document.fr.jumin1.value.length==0){
+		alert("주민등록번호 앞자리를 입력해 주세요");
+		document.fr.jumin1.focus();
+		return;
+	}
+	if(document.fr.jumin1.value.length != 6){
+		alert("주민등록번호 앞자리는 6자 입니다.");
+		document.fr.jumin1.focus();
+		return;
+	}
+	if(document.fr.jumin2.value.length==0){
+		alert("주민등록번호 뒷자리를 입력해 주세요");
+		document.fr.jumin2.focus();
+		return;
+	}
+	if(document.fr.jumin2.value.length != 7){
+		alert("주민등록번호 뒷자리는 7자 입니다.");
+		document.fr.jumin2.focus();
+		return;
+	}	
+	if(document.fr.id.value==""){
+		alert("아이디를 입력해 주세요");
+		document.fr.id.focus();
+		return;
+	}
+	if(document.fr.id.value.length<4 || document.fr.id.value.length>7){
+		alert("회원 ID는 4~7자 사이 입니다.");
+		document.fr.id.focus();
+		return;
+	}
+	if(document.fr.pass.value==""){
+		alert("비밀번호를 입력해 주세요");
+		document.fr.pass.focus();
+		return;
+	}
+	if(document.fr.pass.value.length<4 || document.fr.pass.value.length>10){
+		alert("비밀번호는 4~10자 사이 입니다.");
+		document.fr.pass.focus();
+		return;
+	}
+	if(document.fr.pass2.value==""){
+		alert("비밀번호를 확인해 주세요");
+		document.fr.pass2.focus();
+		return;
+	}
+	if(document.fr.pass2.value != document.fr.pass.value){
+		alert("비밀번호가 일치하지 않습니다.");
+		document.fr.pass2.focus();
+		return;
+	}
+	if(document.fr.tel.value==""){
+		alert("전화번호를 입력해 주세요");
+		document.fr.tel.focus();
+		return;
+	}
+	if(document.fr.grade.value==""){
+		alert("회원분류를 선택해 주세요");
+		document.fr.grade.focus();
+		return;
+	}
+	document.fr.submit();
+}
+</script>
+<style type="text/css">
+#idfr ul li{
+	line-height: 30px;
+	list-style-type: none;
+	padding: 5px 10px;
+	margin: 0 0 2px;
+}
+
+
+</style>
+</head>
+<body>
+<h2>Registeration</h2>
+
+<form action="test1.html" method="get" name="fr" id="idfr">
+<p style="color: gray;">※표시는 반드시 입력하셔야 합니다.</p>
+<ul>
+	<li>
+		<label for="name">※ 이름 </label>
+		<input type="text" name="name">
+	</li>
+	<li>
+		<label for="jumin">※ 주민등록번호 </label>
+		<input type="text" name="jumin1" > - <input type="text" name="jumin2">
+	</li>
+	<li>
+		<label for="id">※ 회원 ID</label>  
+		<input type="text" name="id">
+		<input type="button" value="중복확인" onclick="fun1()">
+	</li>
+	<li>
+		<label for="pass">※ 비밀번호</label> 
+		<input type="password" name="pass">
+	</li>
+	<li>
+		<label for="pass2">※ 비밀번호확인</label> 
+		<input type="password" name="pass2">
+	</li>
+	<li>
+		<label for="email">E-mail</label> 
+		<input type="email" name="email">
+	</li>
+	<li>
+		<label for="tel">※ 전화번호</label> 
+		<input type="text" name="tel">
+	</li>
+	<li>
+		<label for="phone">핸드폰번호</label> 
+		<input type="text" name="phone">
+	</li>
+	<li>
+		<label for="add">우편번호</label> 
+		<input type="text" name=post1> - <input type="text" name=post2>
+		<input type="button" value="검색" onclick="fun2()"><br>
+		<input type="text" name=add1><br>
+	</li>
+	<li>
+		<label for="add2">상세주소</label>
+		<input type="text" name=add2>
+	</li>
+	<li>
+		<label for="grade">※ 회원분류</label>
+		<select name="grade">
+			<option value="">선택해주십시오</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+	</li>
+</ul>
+		<input type="button" value="가입" onclick="fun3()">
+		<input type="reset" value="취소"><br>
+</form>
+</body>
+</html>

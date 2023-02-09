@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html2/test1.htm</title>
+</head>
+<body>
+<h1>입력 양식</h1>
+<!-- 입력 양식(폼)태그 : 사용자가 입력할 수 있게 만드는 태그
+폼안에 입력한 내용을 가지고 action연결페이지로 이동
+입력한 데이터를 들고가는 방식 method = get, post 
+get방식 : 주소줄에 보이면서 id=kim 이름=값
+              -> http://localhost:8080/webProject/html1/ex1.html?id=kim
+           : 가장 많이 사용, 기본방식
+post방식 : 주소줄에 안 보이면서 데이터 전달
+              -> http://localhost:8080/webProject/html1/ex1.html
+             : 특이한 경우 사용, 비밀번호 포함          
+              
+-->
+<!-- <form action="연결주소"  method="입력 데이터 전달방식"> -->
+<form action="../html1/ex1.html"  method="post"  target="_blank">
+<fieldset>
+<legend>필수입력사항</legend>
+<label>아이디 : </label><input type="text"  name="id" value="kim"><br>
+<label>비밀번호 : </label><input type="password"  name="pass"  value="123"><br>
+</fieldset>
+
+<fieldset>
+<legend>선택사항</legend>
+<label>성별 : </label>
+<input type="radio"  name="ra"  value="남">남
+<input type="radio"  name="ra"  value="여">여<br>
+</fieldset>
+
+<fieldset>
+<label>취미 : </label>
+<input type="checkbox"  name="ch"  value="여행">여행
+<input type="checkbox"  name="ch"  value="게임">게임<br>
+
+<label>등급 : </label>
+<select>
+      <option>목록1</option>
+      <option>목록2</option>
+      <option>목록3</option>
+</select><br>
+
+<label>자기소개 : </label>
+<textarea rows="10" cols="20" name="ta">값</textarea>
+</fieldset>
+
+<input type="submit"  value="전송버튼"><br>
+
+</form>
+
+</body>
+</html>

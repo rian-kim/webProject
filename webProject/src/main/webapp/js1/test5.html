@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test5.html</title>
+<script type="text/javascript">
+// 	함수 : 자주사용하는 기능을 정의하고 함수이름을 불러서 사용
+	function	fun1() {
+		alert("안녕하세요");
+		alert("반갑습니다");
+	}
+	
+	function fun2(a,b) {
+		alert(a+b);
+		alert(a-b);
+		alert(a*b);
+		alert(a/b);
+	}
+	function fun3(a,b) {
+		// 두 수 비교 => 최대값 리턴
+		// 변수 선언 (형은 지정하지 않고 저장된 값으로 형 지정됨)
+		var max=0;
+		if(a>b){
+			max=a;
+		}else{
+			max=b;
+		}
+// 		max=a>b ? a : b;
+		return max;
+	}
+</script>
+</head>
+<body>
+<input type="button" value="함수호출버튼" onclick="fun1()">
+<input type="button" value="사칙연산함수호출" onclick="fun2(10,20)">
+<input type="button" value="최대값함수호출" onclick="alert(fun3(10,20))">
+</body>
+</html>

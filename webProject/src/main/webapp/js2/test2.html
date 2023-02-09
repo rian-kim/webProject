@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test2.html</title>
+<script type="text/javascript">
+//p576 브라우저 내장객체 => 계층구조
+//Window - location
+//				- history
+//				- document - imge, ...
+//								 - form	-	text, password, textarea
+//											- checkbox, radio
+//											- select
+
+// p590
+// window.location 내장객체 : 주제 웨브라우저 주소줄 정보를 저장하는 내장객체
+// 									   : window 생략가능
+// location.멤버변수, location.메서드() 호출해서 사용
+// locatiom.href => 주소줄의 내용을 저장하는 변수
+// location.reload() => 새로고침 (F5) 기능
+function fun1(){
+		alert(location.href);
+}
+function fun2(){
+		location.href="http://www.naver.com";
+}
+function fun3(){
+		// "test1.html로 이동" 메시지 출력
+		alert("test1.html로 이동");
+		// test1.html 하이퍼링크 (href변수 내용 변경)
+		location.href="test1.html";
+}
+function fun4(){
+		// 새로고침 아이콘, F5
+		alert("새로고침");
+		location.reload();
+}
+</script>
+</head>
+<body>
+<input type="button" value="주소줄정보" onclick="fun1()"> 
+<a href="http://www,naver.com">하이퍼링크</a>
+<input type="button" value="주소줄정보변경" onclick="fun2()"> 
+<input type="button" value="test1.html로 이동" onclick="fun3()">
+<input type="button" value="새로고침" onclick="fun4()">
+</body>
+</html>

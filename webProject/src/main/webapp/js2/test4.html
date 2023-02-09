@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test4.html</title>
+<script type="text/javascript">
+// window.document 내장객체 : 주제 웹브라우저 html문서 기본틀 정보를 저장하는 내장객체
+// document.멤버변수, document.메서드() 호출해서 사용
+// document.title => 문서 제목정보 저장
+// document.bgColor => 문서 배경색을 저장
+// document.write() => html문에 내용 출력
+function fun1(){
+	alert(document.title);
+}
+function fun2(){
+	// 문서 제목 변경 document.title 변수에 값을 변경 => "문서제목"
+	document.title="문서제목";
+}
+function fun3(){
+	// 문서 배경색 변경 
+	document.bgColor="yellow";
+}
+function fun4(a){
+	document.bgColor=a;
+// 	if(a=='green'){
+// 		document.bgColor='green';
+// 	}else if(a=='skyblue'){
+// 		document.bgColor='skyblue';
+// 	}else{
+// 		document.bgColor='pink';
+// 	}
+}
+document.writeln("문서 내 출력");
+
+function fun5(){
+	// p.594 window.screen 내장객체 : 화면 정보를 저장하는 내장객체
+	// screen.멤버변수 	screen.메서드()
+	alert(screen.availHeight); // 1920
+	alert(screen.availHeight); // 1040
+	alert(screen.orientation); // 방향
+	alert(screen.width); // 1920
+	alert(screen.height); // 1080
+}
+</script>
+</head>
+<body>
+<input type="button" value="문제제목출력" onclick="fun1()">
+<input type="button" value="문제제목변경" onclick="fun2()">
+<input type="button" value="배경색변경" onclick="fun3()"><br>
+<input type="radio" name="ra" value="green" onclick="fun4('green')">green색
+<input type="radio" name="ra" value="skyblue" onclick="fun4('skyblue')">skyblue색
+<input type="radio" name="ra" value="pink" onclick="fun4('pink')">pink색
+
+<input type="button" value="화면정보출력" onclick="fun5()">
+</body>
+</html>

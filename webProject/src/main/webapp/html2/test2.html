@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html2/test2.html</title>
+</head>
+<body>
+<form action="test1.html" method="get">
+<fieldset>
+<legend>필수</legend>
+<label>아이디 :  </label> 
+<input type="text"  name="tx"  value="kim"  size="30"  maxlength="10"><br>
+<label>비밀번호 : </label>
+<input type="password" name="pass" value="123"><br>
+<label>검색 : </label>
+<input type="search"  name="se" ><br>
+<label>url : </label>
+<input type="url"  name="url" ><br>
+<label>email : </label>
+<input type="email"  name="email" ><br>
+<label>tel : </label>
+<input type="tel"  name="tel" ><br>
+</fieldset>
+<fieldset>
+<legend>선택</legend>
+<label>라디오 버튼</label> 
+<input type="radio"  name="ra"  value="1" checked>남
+<input type="radio"  name="ra"  value="2" >여<br>
+<label>체크박스(여러개 선택)</label>
+<input type="checkbox"  name="ch"  value="html" checked>HTML
+<input type="checkbox"  name="ch"  value="java" >자바<br>
+</fieldset>
+
+<fieldset>
+<legend>숫자</legend>
+<label>number </label>
+<input type="number" name="num1"  min="1" max="10" step="2" value="1"><br>
+<label>number </label>
+<input type="range" name="num2"  min="1" max="3" ><br>
+</fieldset>
+
+<fieldset>
+<legend>날짜 / 시간</legend>
+<label>date </label>
+<input type="date"  name="date"  min="2022-11-01" max="2022-11-15"><br>
+<label>month </label>
+<input type="month"  name="month" ><br>
+<label>week </label>
+<input type="week"  name="week" ><br>
+<label>time </label>
+<input type="time"  name="time"><br>
+<label>datetime-local </label>
+<input type="datetime-local"  name="datetime-local" ><br>
+</fieldset>
+
+<fieldset>
+<legend>기타</legend>
+<label>file </label>
+<input type="file"  name="file" ><br>
+<label>hidden </label>
+<input type="hidden"  name="hi"  value="hi"><br>
+<label>여러줄 입력 </label> 
+<textarea rows="5" cols="10" name="ta">입력값</textarea><br>
+<label>목록상자 </label> 
+<select name="se"  size="3"  multiple>
+		<option value="1">목록1</option>
+		<option value="2" selected>목록2</option>
+		<option value="3">목록3</option>
+</select><br>
+<label>데이터 목록</label>
+<input type="text"  list="d">
+<datalist id="d">
+		<option value="1">옵션1</option>
+		<option value="2">옵션2</option>
+		<option value="3">옵션3</option>
+</datalist><br>
+</fieldset>
+
+<input type="submit"  value="전송">
+<!-- 이미지에 submit기능이 포함된 버튼 -->
+<input type="image" src="3.jpg">
+<input type="button" value="버튼">
+<input type="reset"  value="취소(초기화)">
+
+</form>
+</body>
+</html>

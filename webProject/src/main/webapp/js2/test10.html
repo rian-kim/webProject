@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test10</title>
+<script type="text/javascript">
+//p576 브라우저 내장객체 => 계층구조
+//Window - location
+//				- history
+//				- document - imge, ...
+//								 - form	-	text, password, textarea
+//											- checkbox, radio
+//											- select
+
+//window.document.폼이름.목록상자이름 내장객체 : 주제 목록상자정보 저장하는 내장객체
+//document.폼이름.목록상자이름.멤버변수
+//document.폼이름.목록상자이름.메서드() 호출해서 사용
+
+//document.폼이름.목록상자이름.type=> 라디오상자 type 정보 저장
+//document.폼이름.목록상자이름.value => 라디오상자 value 정보 저장
+//document.폼이름.목록상자이름.selectedIndex
+// 				=> 목록상자이름 selectedIndex 변수안에 선택된 목록의 순서정보 저장
+
+//document.폼이름.목록상자이름.focus() => 목록상자 포커스 활성화
+function fun1() {
+	alert(document.fr.se.type);
+	alert(document.fr.se.value); // 목록에서 선택된 value 값
+	alert(document.fr.se.selectedIndex); // 목록에서 선택된 순서값
+}
+function fun2() {
+// 	document.fr.se.value="2학년";
+	document.fr.se.selectedIndex=2;
+}
+function fun3() {
+	// 목록이 선택 안 되어 있으면(첫번째 목록이 선택)
+	// "목록 선택 하세요"
+	// 목록 활성화(포커스) document.fr.se.focus()
+	// 함수 호출한 곳으로 되돌아감
+	// 폼 데이터 전송
+	if(document.fr.se.value==""){
+		alert("목록 선택하세요");
+		document.fr.se.focus()
+		return;
+	}
+	
+// 	if(document.fr.se.selectedIndex==0){
+// 		alert("목록 선택하세요");
+// 		document.fr.se.focus()
+// 		return;
+// 	}
+	document.fr.submit();
+}
+</script>
+</head>
+<body>
+<form action="test1.html" method="get" name="fr" id="idfr">
+목록상자 : 
+<select name="se">
+		<option value="">학년 선택하세요</option>
+		<option value="1학년">1학년</option>
+		<option value="2학년">2학년</option>
+		<option value="3학년">3학년</option>
+</select><br>
+<input type="button" value="목록상자정보" onclick="fun1()">
+<input type="button" value="목록선택변경" onclick="fun2()">
+<input type="button" value="목록제어 후 전송" onclick="fun3()">
+</form>
+</body>
+</html>

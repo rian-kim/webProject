@@ -1,0 +1,36 @@
+<%@page import="member.MemberDTO"%>
+<%@page import="member.MemberDAO"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>member/updateForm.jsp</title>
+</head>
+<body>
+<h1>member/updateForm.jsp</h1>
+<%
+// 회원정보 기준값 id => 세션에 id 값 저장 되어있음
+// 세션에서 "id" 값을 가져오기 => 변수저장
+String id=(String)session.getAttribute("id");
+// MemberDAO 객체생성
+MemberDAO dao=new MemberDAO();
+// MemberDTO dto = getMember(id) 메서드호출
+MemberDTO dto=dao.getMember(id);
+%>
+
+<form action="updatePro.jsp" method="post">
+아이디 : <input type="text" name="id" value="<%=id%>" readonly><br>
+비밀번호 : <input type="password" name="pass"><br>
+이름 : <input type="text" name="name" value="<%=dto.getName()%>">
+<input type="submit" value="회원정보수정">
+</form>
+
+<a href="main.jsp">메인으로 이동</a>
+</body>
+</html>

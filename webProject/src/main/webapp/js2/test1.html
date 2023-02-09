@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test1.html</title>
+<script type="text/javascript">
+// 객체 : 주제(사물, 업무) 정해서 특징을 저장하는 변수, 기능을 정의하는 함수들의 모임
+// 내장객체 호출 사용
+// Array 배열내장객체, Date 날짜내장객체, Math 수학관련내장객체
+// p576 브라우저 내장객체 => 계층구조
+// Window - location
+// 				- history
+// 				- document - imge, ...
+//								 - form	-	text, password, textarea
+// 											- checkbox, radio
+// 											- select
+
+// window 내장객체 : 주제 웹브라우저 윈도우 창 (멤버변수, 메서드) 정의
+// 브라우저 내장객체 쟂체생성 없이 바로 빠르게 사용
+// window.멤버변수, window.메서드() 호출
+
+// 창열기 window.open("열고자 하는 문서", "창이름", "옵션")
+// 창닫기 window.close()
+function fun1(){
+		window.open("http://www.naver.com", "pop", "width=300, height=200");
+}
+function fun2(){
+		window.open("../js1/test3.html", "pop2", "width=500, height=400, left=100, top=100")
+}
+function fun3(){
+		window.close();
+}
+function fun4(){
+		// test1_win.html 파일 만들고 파일안에 창닫기 버튼 준비
+		// test_win.html 창열기
+		window.open("../js2/test_win.html", "pop3", "width=500, height=400, left=100, top=100")
+}
+function fun5(){
+		// 웹브라우저 종류 정보 저장
+		alert(navigator.userAgent);
+// Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/
+// 108.0.0.0 Safari/537.36
+
+}
+</script>
+</head>
+<body>
+<input type="button" value="창열기" onclick="fun1()">
+<input type="button" value="창열기2" onclick="fun2()">
+<input type="button" value="창닫기" onclick="fun3()">
+<input type="button" value="창열고닫기" onclick="fun4()">
+<input type="button" value="브라우저정보" onclick="fun5()">
+</body>
+</html>

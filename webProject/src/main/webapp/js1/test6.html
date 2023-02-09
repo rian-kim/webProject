@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test6.html</title>
+<script type="text/javascript">
+// 	내장함수: 자바스크립트 언어를 만들때 미리 만들어놓은 함수
+//	알림 창 출력
+// 	alert("함수호출"); - 메세지 출력
+	
+// 	확인 창 출력 => 확인을 클릭 true 리턴, 취소를 클릭 false 리턴
+// 	var a = confirm("확인해주세요");
+// 	alert(a);
+// 	if(a==true){
+// 		alert("확인버튼을 클릭");
+// 	}else{
+// 		alert("취소버튼을 클릭");
+// 	}
+
+//	프롬프트 창에서 입력 받기
+	var b=prompt("입력하세요");
+	alert(b);			// 5
+	alert(b+100);	// 5100 연결 => 문자+숫자
+	// b문자를 숫자(정수)로 변경 => parseInt()
+	alert(parseInt(b)+100);	// 105 숫자더하기 => 숫자 + 숫자
+	// b문자를 숫자(실수)로 변경 => parseFloat()
+	alert(parseFloat(b)+100);	// 105 숫자더하기 => 숫자 + 숫자
+	alert(b*100);	// 500
+	alert(b > 100);	// false
+	
+	// html 웹 페이지 출력
+	document.write("b="+b);
+	// 콘솔창 출력 => 웹브라우저 F12 => console에서 확인
+	console.log("b="+b);
+</script>
+</head>
+<body>
+
+</body>
+</html>

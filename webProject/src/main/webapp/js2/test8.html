@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(){
+// 	alert(document.fr.tx.value);
+	// 텍스트 상자안에 입력된 글자의 길이
+	// 문자열내장객체.멤버변수	문자열내장객체.멤버함수()
+	// 문자열 길이를 저장하는 변수 : 문자열.length
+// 	alert(document.fr.tx.value.length); //0
+	if(document.fr.tx.value.length == 0){
+		alert("텍스트 상자 입력하세요");
+		document.fr.tx.focus();
+		return;
+	}
+	// 텍스트 상자 입력된 값의 길이가 5자 아니면 
+	// "텍스트 상자 입력된 값은 5자 입니다."
+	if(document.fr.tx.value.length != 5){
+		alert("텍스트 상자 입력된 값은 5자 입니다.");
+		document.fr.tx.focus();
+		return;
+	}
+	if(document.fr.pass.value.length==0){
+		alert("비밀번호 상자 입력하세요");
+		document.fr.pass.focus();
+		return;
+	}
+	// 비밀번호 상자 입력된 값에 길이가 8자보다 작은경우
+	// "비밀번호 상자 입력된 값은 8자 이상입니다."
+	if(document.fr.pass.value.length < 8){
+		alert("비밀번호 상자 입력된 값은 8자 이상입니다.");
+		document.fr.pass.focus();
+		return;
+	}
+	if(document.fr.ta.value.length==0){
+		alert("여러줄 텍스트 상자 입력하세요");
+		document.fr.ta.focus();
+		return;
+	}
+	// 여러줄 텍스트 상자 입력된 값의 길이가 4~7자가 아니면
+	// "여러줄 텍스트 상자 입력되는 값은 4~7자 사이 입니다."
+	if(document.fr.ta.value.length<4 || document.fr.ta.value.length>7){
+		alert("여러줄 텍스트 상자 입력되는 값은 4~7자 사이 입니다.");
+		document.fr.ta.focus();
+		return;
+	}
+	document.fr.submit();
+}
+</script>
+</head>
+<body>
+<form action="test1.html" method="get" name="fr" id="idfr">
+텍스트 상자 : <input type="text" name="tx" value=""><br>
+비밀번호 상자 : <input type="password" name="pass"><br>
+여러줄 텍스트 상자 : <textarea name="ta" rows="5" cols="10"></textarea><br>
+<input type="button" value="텍스트상자제어" onclick="fun1()">
+</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html1/ex8.htm</title>
+</head>
+<body>
+<h1>p155 배송정보</h1>
+<!--  checked = 처음부터 체크되어 있음 -->
+<!--  autofocus = 자동으로 입력커서 표시 -->
+<!--  placeholder = 힌트 내용 표시(설명글) -->
+<!--  readonly = 읽기 전용(수정 불가) -->
+<!--  required = 필수조건 제어 --> 
+
+<form action="ex7.html" method="get">
+<fieldset>
+<legend>배송 정보</legend>
+<label>이름 </label> 
+<input type="text"  name="name" autofocus><br>
+<label>배송 주소 </label> 
+<input type="text"  name="address"  value="부산"  readonly><br>
+<label>이메일 </label> 
+<input type="email"  name="email" placeholder="이메일 형식"  required><br>
+<label>연락처 </label>
+<input type="phone"  name="phone"><br>
+<label>배송지정 </label>
+<input type="date"  name="date"> <small>(주문일로부터 최소 3일 이후)</small><br>
+<label>메모 </label> <textarea rows="4" cols="40"  name="memo"></textarea>
+</fieldset>
+<input type="submit"  value="주문">
+<input type="reset"  value="취소">
+</form>
+</body>
+</html>

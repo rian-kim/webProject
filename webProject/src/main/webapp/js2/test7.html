@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//p576 브라우저 내장객체 => 계층구조
+//Window - location
+//				- history
+//				- document - imge, ...
+//								 - form	-	text, password, textarea
+//											- checkbox, radio
+//											- select
+
+//window.document.폼이름.텍스트상자이름 내장객체 : 주제 텍스트상자정보 저장하는 내장객체
+//document.폼이름.텍스트상자이름.멤버변수
+//document.폼이름.텍스트상자이름.메서드() 호출해서 사용
+//document.폼이름.텍스트상자이름.type=> 텍스트상자 type 정보 저장
+//document.폼이름.텍스트상자이름.value => 텍스트상자 value 정보 저장
+//document.폼이름.텍스트상자이름.focus() => 텍스트상자 커서 깜빡 기능
+//document.폼이름.텍스트상자이름.blur() => 텍스트상자 커서 깜빡 해제 기능
+//document.폼이름.텍스트상자이름.select() => 텍스트상자 내용 선택하는(블럭) 기능
+function fun1(){
+	alert(document.fr.tx.type);
+	alert(document.fr.tx.value);
+	document.fr.tx.focus();
+	document.fr.tx.blur();
+	document.fr.tx.select();
+}
+function fun2(){
+	document.fr.tx.value="변경내용";
+	// 텍스트 상자에 비어있는 값
+	document.fr.tx.value="";
+}
+function fun3(){
+// 	alert(document.fr.tx.value);
+	// 텍스트 상자 비어있으면 "텍스트 상자 입력하세요" 포커스 깜빡
+	if(document.fr.tx.value==""){
+		alert("텍스트 상자 입력하세요");
+		document.fr.tx.focus();
+	}else if(document.fr.pass.value==""){
+		// 비밀번호 상자 비어있으면 "비밀번호 상자 입력하세요" 포커스 깜빡
+		alert("비밀번호 상자 입력하세요");
+		document.fr.pass.focus();
+	}else if(document.fr.ta.value==""){
+		// 여러줄 텍스트 상자 비어있으면 "여러줄 텍스트 상자 입력하세요" 포커스 깜빡
+		alert("여러줄 텍스트 상자 입력하세요");
+		document.fr.ta.focus();
+	}else{
+	// 데이터 전송, 페이지 연결
+	document.fr.submit();
+	}
+}
+function fun4(){
+	if(document.fr.tx.value==""){
+		alert("텍스트 상자 입력하세요");
+		document.fr.tx.focus();
+		// 메서드 동작 여기까지 하고 멈춤(함수 호출한 곳으로 되돌아 감 )
+		return;
+	}
+	if(document.fr.pass.value==""){
+		// 비밀번호 상자 비어있으면 "비밀번호 상자 입력하세요" 포커스 깜빡
+		alert("비밀번호 상자 입력하세요");
+		document.fr.pass.focus();
+		return;
+	}
+	if(document.fr.ta.value==""){
+		// 여러줄 텍스트 상자 비어있으면 "여러줄 텍스트 상자 입력하세요" 포커스 깜빡
+		alert("여러줄 텍스트 상자 입력하세요");
+		document.fr.ta.focus();
+		return;
+	}
+	// 데이터 전송, 페이지 연결
+	document.fr.submit();
+	}
+
+</script>
+</head>
+<body>
+<form action="test1.html" method="get" name="fr" id="idfr">
+텍스트 상자 : <input type="text" name="tx" value=""><br>
+비밀번호 상자 : <input type="password" name="pass"><br>
+여러줄 텍스트 상자 : <textarea name="ta" rows="5" cols="10"></textarea><br>
+<input type="button" value="텍스트상자정보" onclick="fun1()">
+<input type="button" value="텍스트상자정보변경" onclick="fun2()">
+<input type="button" value="텍스트상자제어" onclick="fun3()">
+<input type="button" value="텍스트상자제어2" onclick="fun4()">
+
+</form>
+</body>
+</html>

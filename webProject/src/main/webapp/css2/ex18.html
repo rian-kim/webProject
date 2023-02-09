@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* 전체대상 밖여백 0px, 안여백 0px */
+/* body대상 배경색 #ccc, 안여백 20px */
+/* id="signup" 대상 배경색 흰색, 테두리선 1px 실선 #222, 테두리선 둥글게 5px 
+	안여백 20px, 너비 400px */
+/* 	id="signup" 모든자손 fieldset 테두리선 1px 실선 #ccc, 밖 아래여백 30px */
+/* 	id="signup" 모든자손 fieldset중에 마지막 테두리선 none */
+/* id="signup" 모든자손 legend 글자크기 16px, 글자 굵기 bold, 안 왼쪽여백 5px, 
+	안 아래쪽여백 10px */
+/* 	 id="signup" 모든자손 ul li 줄간격 30px, 목록스타일 없앰, 
+	안여백 위아래 5px 왼오른 10px, 밖 아래 여백 2px */
+/* 	 id="signup" 모든자손 label 너비 110px, 글자크기 13px, 왼쪽으로 어울림 */
+/* id="signup" 모든자손 input제외 [type="submit"]
+	테두리선 1px 실선 #ccc,  테두리선 둥글게 3px, 글자크기 13px, 안여백 5px,
+	너비 200px*/
+/* 	id="signup" input[type="submit"] 테두리선 1px 실선 #222, 
+	테두리 둥글게 20px, 글자크기 16px, 글자간격 1px, 밖여백 자동auto,
+	안여백 위아래 7px, 왼오른쪽 25px,  배치(dispay) block */
+/* 	id="signup" input required 테두리선 1px 실선 빨간색 */
+/* 	id="signup" input redonly 테두리선 없앰 */
+/* 	id="signup" input[type="submit"] :hover 배경색 #222, 글자색 흰색 */	
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background-color: #ccc;
+	padding:20px;
+}
+#signup{
+	background-color: white;
+	border: 1px solid #222;
+	border-radius: 5px;
+	padding: 20px;
+	width: 400px;
+}
+#signup fieldset{
+	border: 1px solid #ccc;
+	margin: 0 0 30px;
+}
+#signup fieldset:last-of-type{
+	border: none;
+}
+#signup legend{
+	font-size: 16px;
+	font-weight: bold;
+	padding: 0 0 10px 5px;
+}
+#signup ul li{
+	line-height: 30px;
+	list-style-type: none;
+	padding: 5px 10px;
+	margin: 0 0 2px;
+}
+#signup label{
+	width: 110px;
+	font-size: 13px;
+	float: left;
+}
+#signup input:not([type=submit]){
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-size: 13px;
+	padding: 5px;
+	width: 200px;
+}
+#signup input[type=submit]{
+	border: 1px solid #222;
+	border-radius: 20px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: 7px 25px;
+	display: block;
+}
+#signup input[required]{
+	border: 1px solid red;
+}
+#signup input[readonly]{
+	border-style: none;
+}
+#signup input[type=submit]:hover{
+	background-color: #222;
+	color: white;
+}
+</style>
+</head>
+<body>
+<form id="signup" action="test15.html" method="get">
+    <fieldset>
+      <legend>로그인 정보</legend>
+      <ul>
+        <li>
+          <label for="userid">아이디</label>
+          <input id="userid" name="userid" type="text" required autofocus>
+        </li>
+        <li>
+          <label for="pwd1">비밀번호</label>
+          <input id="pwd1" name="pwd1" type="password"  required>
+        </li>
+        <li>
+          <label for="pwd2">비밀번호 확인</label>
+          <input id="pwd2" name="pwd2" type="password" required>
+        </li>  
+        <li>
+          <label for="level">회원 등급</label>
+          <input id="level" name="level" type="text" readonly value="준회원">
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>개인 정보</legend>
+      <ul>
+        <li>
+          <label for="fullname">이름</label>
+          <input id="fullname" name="fullname" type="text" placeholder="5자미만 공백없이" required>
+        </li>
+        <li>
+          <label for="email">메일 주소</label>
+          <input id="email" name="email" type="email" placeholder="abcd@domain.com" required autocomplete="off">
+        </li>
+        <li>
+          <label for="tel">연락처</label>
+          <input id="tel" name="tel" type="tel" autocomplete="off">
+        </li>  
+      </ul>
+    </fieldset>
+    <fieldset>
+    	<input type="submit" value="제출"> 
+    </fieldset>
+  </form>
+</body>
+</html>

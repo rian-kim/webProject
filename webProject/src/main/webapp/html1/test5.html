@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<img src="1.jpg" width="300px" height="500" border="10"><br>
+<img src="10.jpg" alt="이미지 없음"><br>
+<img src="2.jpg" width="50%" height="50%"><br>
+<img src="images/5.jpg"><br>
+<img src="images/6.jpg"><br>
+<img src="3.jpg" ><br>
+<img src="4.jpg" ><br>
+
+<!-- 상대참조 : 현 파일을 기준으로 참조 -->
+<!-- . : 현재 위치(폴더), .. : 상위폴더 -->
+<h1> html2폴더에있는  3.jpg</h1> 
+<img src="../html2/3.jpg"><br>
+<h1> html2폴더에 있는 images폴더에 4.jpg </h1>
+<img src="../html2/images/4.jpg"><br>
+
+<!--  절대참조 : /를 기준으로 참조 
+                     : 웹 서버에서 절대 주소를 기준으로 참조-->
+<!-- http://localhost:8080/webProject/html1/test5.html --> 
+<h1>/루트 webProject폴더 안에 html2폴더 images폴더 4.jpg</h1>
+<img src="/webProject/html2/images/4.jpg"><br>
+<h1>/루트 webProject폴더 안에 html1폴더 images폴더 1.jpg</h1>
+<img src="/webProject/html1/1.jpg"><br>
+
+</body>
+</html>
+

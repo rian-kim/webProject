@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test6.htm</title>
+<script type="text/javascript">
+//p576 브라우저 내장객체 => 계층구조
+//Window - location
+//				- history
+//				- document - imge, ...
+//								 - form	-	text, password, textarea
+//											- checkbox, radio
+//											- select
+
+// window.document.폼이름 내장객체 : 주제 폼정보 저장하는 내장객체
+// document.폼이름.멤버변수, document.폼이름.메서드() 호출해서 사용
+// document.폼이름.action => 폼 연결페이지 정보 저장
+// document.폼이름.method => 폼 데이터 전송 방식 저장
+// document.폼이름.submit() => 폼 데이터를 서버에 전달하고 연결페이지 이동기능
+// document.폼이름.reset() => 폼화면 초기화
+function fun1(){
+	alert(document.fr.action);
+	alert(document.fr.method);
+}
+function fun2(){
+	document.fr.submit();
+}
+function fun3(){
+	// 초기화기능 reset
+	document.fr.reset();
+}
+function fun4(){
+	document.fr.action="test2.html";
+	document.fr.method="post";
+	// 데이터전송. 페이지연결
+	document.fr.submit();
+}
+function fun5(a){
+	document.fr.action=a;
+	document.fr.submit();
+}
+</script>
+</head>
+<body>
+<!-- http://localhost:8080/webProject/js2/test6.html  -->
+<!-- http://localhost:8080/webProject/js2/test1.html?tx=kim -->
+<form action="test1.html" method="get" name="fr" id="idfr">
+텍스트 상자 : <input type="text" name="tx">
+<input type="submit" value="전송">
+<input type="reset" value="초기화">
+<input type="button" value="폼정보" onclick="fun1()">
+<input type="button" value="전송버튼" onclick="fun2()"><br>
+<input type="button" value="초기화버튼" onclick="fun3()">
+<input type="button" value="폼정보변경 전송" onclick="fun4()">
+<input type="button" value="장바구니" onclick="fun5('basket.jsp')">
+<input type="button" value="바로구매" onclick="fun4('order.jsp')">
+</form>
+</body>
+</html>
